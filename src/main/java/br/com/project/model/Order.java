@@ -1,4 +1,4 @@
-package br.com.project.entites;
+package br.com.project.model;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -14,6 +14,7 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
+import br.com.project.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -33,9 +34,11 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
+	private Long orderId;
+	
 	private Instant moment;
+	
+	private String orderStatus;
 	
 	@ManyToOne
 	@JoinColumn(name = "client_id")

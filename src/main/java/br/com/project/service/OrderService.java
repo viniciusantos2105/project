@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.project.entites.Order;
+import br.com.project.model.Order;
 import br.com.project.repositories.OrderRepository;
 
 

@@ -1,4 +1,4 @@
-package br.com.project.resources;
+package br.com.project.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,25 +10,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.project.entites.Person;
-import br.com.project.service.UserService;
+import br.com.project.model.Order;
+import br.com.project.service.OrderService;
 
 @RestController
-@RequestMapping("/users")
-public class UserResource {
+@RequestMapping("/orders")
+public class OrderController {
 	
 	@Autowired
-	private UserService service;
+	private OrderService service;
 	
 	@GetMapping("/")
-	public ResponseEntity<List<Person>> findAll(){
-		List<Person> list = service.findAll();
+	public ResponseEntity<List<Order>> findAll(){
+		List<Order> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Person> findById(@PathVariable Long id){
-		Person obj = service.findById(id);
+	public ResponseEntity<Order> findById(@PathVariable Long id){
+		Order obj = service.findById(id);
 		return ResponseEntity.ok(obj);
 	}
 }

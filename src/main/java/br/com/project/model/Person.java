@@ -1,4 +1,4 @@
-package br.com.project.entites;
+package br.com.project.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

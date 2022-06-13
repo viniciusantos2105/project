@@ -2,8 +2,8 @@
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.project.entites.Order;
-import br.com.project.entites.Person;
+import br.com.project.model.Order;
+import br.com.project.model.Person;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
